@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    
     <div class="container">
         <header>
             <a class="brand" href="#">
@@ -72,57 +73,59 @@
 
             <!-- PROJECTS -->
             <section id="projects">
-                <div class="section-title">
-                    <div>
-                        <h2>Projects</h2>
-                        <div class="meta">Some of my key works in embedded systems and robotics.</div>
+                <div class="card">
+                    <div class="section-title">
+                        <div>
+                            <h2>Projects</h2>
+                            <div class="meta">Some of my key works in embedded systems and robotics.</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="grid">
-                    <article class="project" data-title="Dual-axis Solar Tracker" data-desc="An intelligent solar tracking system that automatically 
+                    <div class="grid">
+                        <article class="project" data-title="Dual-axis Solar Tracker" data-desc="An intelligent solar tracking system that automatically 
                                 aligns solar panels with the sun using GPS-based location data, 
                                 real-time clock, and sun position equations. 
                                 
                                 Equipped with an MPU6050 for orientation feedback and a 
                                 PID-controlled L298N motor driver for precise dual-axis 
                                 motion using linear actuators, maximizing solar energy 
-                                efficiency." data-img="solar_tracker_img3.jpg">
-                        <img src="solar_tracker_img3.jpg" alt="">
+                                efficiency." data-img="solar_tracker_img3.jpg" data-link="docs/solar_tracker.html">
 
-                        <div class="project-content">
-                            <h3>Dual-axis Solar Tracker</h3>
-                            <p>MPU6050 orientation lock with L298N motor control; GPS and RTC-based tracking.</p>
-                            <div class="tech">
-                                <span class="chip">MPU6050</span>
-                                <span class="chip">L298N</span>
-                                <span class="chip">NEO6M GPS</span>
-                                <span class="chip">Arduino</span>
+                            <img src="solar_tracker_img3.jpg" alt="solar_tracker_img3.jpg">
+                            <div class="project-content">
+                                <h3>Dual-axis Solar Tracker</h3>
+                                <p>MPU6050 orientation lock with L298N motor control; GPS and RTC-based tracking.</p>
+                                <div class="tech">
+                                    <span class="chip">MPU6050</span>
+                                    <span class="chip">L298N</span>
+                                    <span class="chip">NEO6M GPS</span>
+                                    <span class="chip">Arduino</span>
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="project" data-title="ESP32 Fire Detection System"
-                        data-desc="Real-time MLX90614, MQ-2, and flame sensor readings with SMS alerts via SIM800L."
-                        data-img="https://via.placeholder.com/400x250?text=Fire+Detection">
-                        <img src="https://via.placeholder.com/400x250?text=Fire+Detection" alt="">
-                        <div class="project-content">
-                            <h3>ESP32 Fire Detection</h3>
-                            <p>Sensor network with SIM800L SMS alerts.</p>
-                            <div class="tech"><span class="chip">ESP32</span><span class="chip">SIM800L</span></div>
-                        </div>
-                    </article>
+                        <article class="project" data-title="ESP32 Fire Detection System"
+                            data-desc="Real-time MLX90614, MQ-2, and flame sensor readings with SMS alerts via SIM800L."
+                            data-img="https://via.placeholder.com/400x250?text=Fire+Detection">
+                            <img src="https://via.placeholder.com/400x250?text=Fire+Detection" alt="">
+                            <div class="project-content">
+                                <h3>ESP32 Fire Detection</h3>
+                                <p>Sensor network with SIM800L SMS alerts.</p>
+                                <div class="tech"><span class="chip">ESP32</span><span class="chip">SIM800L</span></div>
+                            </div>
+                        </article>
 
-                    <article class="project" data-title="Sumo Robot (Multi-mode)"
-                        data-desc="ESP32-controlled Sumo Robot with multiple behavior modes and IR/ultrasonic sensors."
-                        data-img="https://via.placeholder.com/400x250?text=Sumo+Robot">
-                        <img src="https://via.placeholder.com/400x250?text=Sumo+Robot" alt="">
-                        <div class="project-content">
-                            <h3>Sumo Robot (Multi-mode)</h3>
-                            <p>Adaptive IR and ultrasonic-based competition robot.</p>
-                            <div class="tech"><span class="chip">ESP32</span><span class="chip">TB6612</span></div>
-                        </div>
-                    </article>
+                        <article class="project" data-title="Sumo Robot (Multi-mode)"
+                            data-desc="ESP32-controlled Sumo Robot with multiple behavior modes and IR/ultrasonic sensors."
+                            data-img="https://via.placeholder.com/400x250?text=Sumo+Robot">
+                            <img src="https://via.placeholder.com/400x250?text=Sumo+Robot" alt="">
+                            <div class="project-content">
+                                <h3>Sumo Robot (Multi-mode)</h3>
+                                <p>Adaptive IR and ultrasonic-based competition robot.</p>
+                                <div class="tech"><span class="chip">ESP32</span><span class="chip">TB6612</span></div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </section>
 
@@ -188,7 +191,9 @@
             <img id="modalImg" src="" alt="">
             <h3 id="modalTitle"></h3>
             <p id="modalDesc" style="color:var(--muted)"></p>
+            <button class="open-btn" id="viewDocBtn">View Documentation</button>
             <button class="close-btn" id="closeModal">Close</button>
+
         </div>
     </div>
 </body>

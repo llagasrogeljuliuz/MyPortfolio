@@ -13,20 +13,22 @@
     box-sizing: border-box
 }
 
-html,
-body {
-    height: 100%
+html {
+    min-height: 100%;
+    background: linear-gradient(180deg, var(--bg) 0%, #08101b 100%);
+    background-attachment: fixed;
 }
 
 body {
     margin: 0;
     font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto;
-    background: linear-gradient(180deg, var(--bg) 0%, #08101b 100%);
+    background: transparent; /* Let html handle the gradient */
     color: #e6eef6;
     padding: 40px 20px;
     display: flex;
     justify-content: center;
     scroll-behavior: smooth;
+    min-height: 100vh;
 }
 
 .container {
@@ -95,12 +97,14 @@ nav {
     display: grid;
     grid-template-columns: 1fr 360px;
     gap: 32px;
-    align-items: stretch; /* ensures both cards stretch equally */
+    align-items: stretch;
+    /* ensures both cards stretch equally */
     margin-bottom: 28px;
 }
 
 .hero .card {
-    height: 100%; /* make both cards fill equal height */
+    height: 100%;
+    /* make both cards fill equal height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -280,12 +284,23 @@ nav {
 }
 
 .modal-content img {
-    max-width: 100%;
+    max-width: 50%;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
 .close-btn {
+    margin-top: 10px;
+    background: var(--accent);
+    border: none;
+    color: #042029;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer
+}
+
+.open-btn {
     margin-top: 10px;
     background: var(--accent);
     border: none;
@@ -332,17 +347,21 @@ footer {
 }
 
 /* Headings and text */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--accent);
 }
 
-p, li {
+p,
+li {
     color: var(--muted);
     line-height: 1.6;
 }
 
 /* Image and video cards */
-.image-card, .video-card {
+.image-card,
+.video-card {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 12px;
     padding: 12px;
@@ -466,6 +485,7 @@ header {
         max-height: none;
         padding: 20px;
     }
+
     .image-grid img {
         width: 100%;
     }
