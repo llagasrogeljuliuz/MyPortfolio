@@ -22,9 +22,10 @@ html {
 body {
     margin: 0;
     font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto;
-    background: transparent; /* Let html handle the gradient */
+    background: transparent;
+    /* Let html handle the gradient */
     color: #e6eef6;
-    padding: 40px 20px;
+    padding: 10px 40px 20px;
     display: flex;
     justify-content: center;
     scroll-behavior: smooth;
@@ -113,7 +114,7 @@ nav {
 .card {
     background: var(--glass);
     border-radius: var(--radius);
-    padding: 22px;
+    padding: 10px 20px 10px 20px;
     box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
 }
 
@@ -126,8 +127,10 @@ nav {
     text-indent: 40px;
     text-align: justify;
     color: var(--muted);
-    line-height: 1.6
+    line-height: 1.6;
+    margin: 0px;
 }
+
 
 .btn {
     display: inline-flex;
@@ -384,6 +387,17 @@ li {
     box-shadow: 0 0 20px rgba(125, 211, 252, 0.4);
 }
 
+.image-card img.zoomable[alt="Dual-axis Solar Tracker Overview"] {
+    width: 70%;
+    /* Shrinks image */
+    max-width: 600px;
+    /* Keeps it proportional */
+    display: block;
+    margin: 0 auto;
+    /* Centers the image */
+    border-radius: 12px;
+}
+
 /* Responsive video */
 .video-card video {
     width: 100%;
@@ -471,7 +485,7 @@ code {
 
 /* Adjust header inside documentation */
 header {
-    position: sticky;
+    position: relative;
     top: 0;
     background: linear-gradient(180deg, rgba(15, 23, 36, 0.98), rgba(15, 23, 36, 0.85));
     backdrop-filter: blur(8px);
@@ -479,8 +493,24 @@ header {
     padding: 16px 0;
 }
 
-/* Responsive tweaks */
-@media (max-width: 600px) {
+/* Responsive tweak for smaller screens */
+@media (max-width: 800px) {
+    body {
+        padding-top: 10px;
+    }
+
+    header {
+        position: relative;
+        padding: 10px 12px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-link {
+        padding: 0px;
+    }
+
     .doc-container {
         max-height: none;
         padding: 20px;
@@ -489,4 +519,5 @@ header {
     .image-grid img {
         width: 100%;
     }
+
 }
