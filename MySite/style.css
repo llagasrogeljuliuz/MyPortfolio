@@ -95,8 +95,15 @@ nav {
     display: grid;
     grid-template-columns: 1fr 360px;
     gap: 32px;
-    align-items: start;
+    align-items: stretch; /* ensures both cards stretch equally */
     margin-bottom: 28px;
+}
+
+.hero .card {
+    height: 100%; /* make both cards fill equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card {
@@ -112,6 +119,8 @@ nav {
 }
 
 .intro p {
+    text-indent: 40px;
+    text-align: justify;
     color: var(--muted);
     line-height: 1.6
 }
@@ -301,5 +310,163 @@ footer {
 
     .profile {
         order: -1
+    }
+}
+
+/* ======== Documentation Page Additions ======== */
+
+.doc-container {
+    max-width: 900px;
+    margin: auto;
+    background: var(--glass);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+    overflow-y: auto;
+    max-height: calc(100vh - 120px);
+}
+
+/* Scrollable sections */
+.section {
+    margin-top: 40px;
+}
+
+/* Headings and text */
+h1, h2, h3 {
+    color: var(--accent);
+}
+
+p, li {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* Image and video cards */
+.image-card, .video-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.image-card img,
+.image-grid img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-card img:hover,
+.image-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(125, 211, 252, 0.4);
+}
+
+/* Responsive video */
+.video-card video {
+    width: 100%;
+    border-radius: 12px;
+    outline: none;
+    max-height: 480px;
+}
+
+/* Image grid for multiple photos */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.image-grid img {
+    width: 260px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Lightbox for zoomed images */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: var(--accent);
+    border: none;
+    color: #042029;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Back link or small buttons inside doc */
+a.back-link {
+    text-decoration: none;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+a.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Code blocks */
+pre {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e6eef6;
+    padding: 12px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 13px;
+}
+
+code {
+    color: var(--accent);
+}
+
+/* Adjust header inside documentation */
+header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 36, 0.98), rgba(15, 23, 36, 0.85));
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    padding: 16px 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .doc-container {
+        max-height: none;
+        padding: 20px;
+    }
+    .image-grid img {
+        width: 100%;
     }
 }
