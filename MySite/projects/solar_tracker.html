@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dual-axis Solar Tracker — Project Documentation</title>
+
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      padding: 40px 20px;
+    }
+
+    .doc-container {
+      max-width: 900px;
+      margin: auto;
+      background: var(--glass);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+    }
+
+    h1, h2, h3 {
+      color: var(--accent);
+    }
+
+    p, li {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      margin-top: 20px;
+      display: inline-flex;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header .meta {
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 50px;
+    }
+
+    pre {
+      background: rgba(255, 255, 255, 0.05);
+      color: #e6eef6;
+      padding: 12px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 13px;
+    }
+
+    code {
+      color: var(--accent);
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    a.back-link {
+      text-decoration: none;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="../index.html#projects" class="back-link">← Back to Portfolio</a>
+
+  <div class="doc-container">
+    <header>
+      <h1>Dual-axis Solar Tracker</h1>
+      <div class="meta">An intelligent solar tracking system with GPS, MPU6050, and RTC for real-time sun tracking.</div>
+      <img src="../solar_tracker_img1.jpg" alt="Dual-axis Solar Tracker">
+    </header>
+
+    <section class="section">
+      <h2>Overview</h2>
+      <p>
+        The Dual-axis Solar Tracker automatically aligns solar panels toward the sun throughout the day to maximize energy collection.
+        It uses a combination of sensors and control logic to adjust the pitch and roll angles of the panel via linear actuators.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Hardware Components</h2>
+      <ul>
+        <li><strong>MPU6050</strong> – Measures orientation (pitch and roll).</li>
+        <li><strong>NEO6M GPS</strong> – Provides location coordinates for sun path calculation.</li>
+        <li><strong>L298N Motor Driver</strong> – Controls the linear actuators.</li>
+        <li><strong>DS1302 RTC Module</strong> – Keeps real-time tracking for time-based alignment.</li>
+        <li><strong>Arduino Mega</strong> – Main controller running PID control logic.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>System Operation</h2>
+      <p>
+        The system calculates the sun's position using GPS coordinates, time, and date. It adjusts the solar panel using
+        a PID controller based on the MPU6050’s orientation feedback to maintain accurate alignment with the sun’s path.
+      </p>
+      <img src="../solar_tracker_img3.jpg" alt="Solar Tracker Working">
+    </section>
+
+    <section class="section">
+      <h2>Control Algorithm</h2>
+      <pre><code>// Simplified pseudo-code
+read MPU6050 orientation;
+read GPS longitude, latitude;
+calculate sun position (azimuth, altitude);
+compute error = sun_position - current_orientation;
+PID_output = Kp*error + Ki*sum(error) + Kd*d(error);
+control motor direction via L298N;
+</code></pre>
+      <p>
+        The PID algorithm ensures smooth and stable motion, compensating for environmental changes like wind or load variation.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Features</h2>
+      <ul>
+        <li>Dual-axis motion with precise orientation control.</li>
+        <li>GPS-based sun position calculation.</li>
+        <li>Time-based tracking using RTC module.</li>
+        <li>PID control for smooth actuator response.</li>
+        <li>Failsafe reset to initial position after sunset.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Results</h2>
+      <p>
+        The tracker successfully maintained optimal alignment throughout the day, achieving improved energy efficiency compared to fixed panels.
+        It demonstrated reliable performance with minimal overshoot due to effective PID tuning.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Future Improvements</h2>
+      <ul>
+        <li>Add IoT monitoring for real-time energy tracking.</li>
+        <li>Integrate cloud data logging and weather-based adjustments.</li>
+        <li>Optimize power consumption of the control system.</li>
+      </ul>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Rogel Juliuz A. Llagas · All Rights Reserved
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

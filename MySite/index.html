@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rogel — Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <meta name="description" content="Minimal dark portfolio for embedded systems and robotics projects." />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a class="brand" href="#">
+                <div class="logo">RJ</div>
+                <div>
+                    <h1>Rogel Juliuz Almacin Llagas</h1>
+                    <p>Mechatronics Graduate · Embedded Systems · Robotics</p>
+                </div>
+            </a>
+            <nav>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#internship">Internship</a>
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="card intro">
+                    <h2>Hello — I'm <span style="color:var(--accent)">Rogel</span></h2>
+                    <p>I design and build embedded systems and robotics projects that bridge hardware and software. I
+                        enjoy solving real-world problems using sensors, microcontrollers, and control logic.</p>
+                    <div class="meta">Based in Cebu City · Open to entry-level opportunities</div>
+                    <div style="margin-top:10px">
+                        <a class="btn primary" href="#projects">View Projects</a>
+                        <a class="btn" href="mailto:llagasrogeljuliuz@gmail.com">Send me an email</a>
+                    </div>
+                </div>
+
+                <aside class="profile card">
+                    <div class="avatar">
+                        <img src="profile-image.png" alt="RJ">
+                    </div>
+                    <div>
+                        <h3>Quick facts</h3>
+                        <div class="meta">Mechatronics graduate. Skilled in Arduino, ESP32, and embedded systems.</div>
+                    </div>
+                    <div>
+                        <h4>Skills</h4>
+                        <div class="skills">
+                            <span class="skill">Arduino</span><span class="skill">ESP32</span>
+                            <span class="skill">Python</span><span class="skill">C/C++</span>
+                            <span class="skill">PCB Design</span><span class="skill">PID Control</span>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects">
+                <div class="section-title">
+                    <div>
+                        <h2>Projects</h2>
+                        <div class="meta">Some of my key works in embedded systems and robotics.</div>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <article class="project" data-title="Dual-axis Solar Tracker"
+                        data-desc="An intelligent solar tracking system that automatically 
+                                aligns solar panels with the sun using GPS-based location data, 
+                                real-time clock, and sun position equations. 
+                                
+                                Equipped with an MPU6050 for orientation feedback and a 
+                                PID-controlled L298N motor driver for precise dual-axis 
+                                motion using linear actuators, maximizing solar energy 
+                                efficiency."
+                        data-img="solar_tracker_img3.jpg">
+                        <img src="solar_tracker_img3.jpg" alt="">
+                        
+                        <div class="project-content">
+                            <h3>Dual-axis Solar Tracker</h3>
+                            <p>MPU6050 orientation lock with L298N motor control; GPS and RTC-based tracking.</p>
+                            <div class="tech">
+                                <span class="chip">MPU6050</span>
+                                <span class="chip">L298N</span>
+                                <span class="chip">NEO6M GPS</span>
+                                <span class="chip">Arduino</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project" data-title="ESP32 Fire Detection System"
+                        data-desc="Real-time MLX90614, MQ-2, and flame sensor readings with SMS alerts via SIM800L."
+                        data-img="https://via.placeholder.com/400x250?text=Fire+Detection">
+                        <img src="https://via.placeholder.com/400x250?text=Fire+Detection" alt="">
+                        <div class="project-content">
+                            <h3>ESP32 Fire Detection</h3>
+                            <p>Sensor network with SIM800L SMS alerts.</p>
+                            <div class="tech"><span class="chip">ESP32</span><span class="chip">SIM800L</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project" data-title="Sumo Robot (Multi-mode)"
+                        data-desc="ESP32-controlled Sumo Robot with multiple behavior modes and IR/ultrasonic sensors."
+                        data-img="https://via.placeholder.com/400x250?text=Sumo+Robot">
+                        <img src="https://via.placeholder.com/400x250?text=Sumo+Robot" alt="">
+                        <div class="project-content">
+                            <h3>Sumo Robot (Multi-mode)</h3>
+                            <p>Adaptive IR and ultrasonic-based competition robot.</p>
+                            <div class="tech"><span class="chip">ESP32</span><span class="chip">TB6612</span></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- INTERNSHIP -->
+            <section id="internship" style="margin-top:26px">
+                <div class="card">
+                    <h2>Internship / OJT</h2>
+                    <p class="meta">Pulverizer Machine Project — Team collaboration during mechanical and control system
+                        development.</p>
+                    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:14px;">
+                        <img src="https://via.placeholder.com/250x160?text=Pulverizer+1" style="border-radius:10px;">
+                        <img src="https://via.placeholder.com/250x160?text=Pulverizer+2" style="border-radius:10px;">
+                    </div>
+                    <ul style="margin-top:12px;color:var(--muted);line-height:1.6">
+                        <li>Implemented motor control with L298N and PID tuning.</li>
+                        <li>Integrated MPU6050 for orientation feedback.</li>
+                        <li>Developed test procedures and documentation.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section id="about" style="margin-top:26px">
+                <div class="card">
+                    <h2>About Me</h2>
+                    <p class="meta">I’m a Mechatronics Engineering graduate passionate about embedded systems, robotics,
+                        and automation. I love creating intelligent devices that make systems more efficient and
+                        reliable.</p>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact" style="margin-top:26px">
+                <div class="card">
+                    <h2>Contact</h2>
+                    <p class="meta">Send me a message below — I’ll get back to you as soon as I can.</p>
+                    <form id="contactForm" action="https://formsubmit.co/llagasrogeljuliuz@gmail.com" method="POST">
+                        <input type="hidden" name="_next" value="">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div style="display:grid;gap:10px;margin-top:12px;">
+                            <input name="name" placeholder="Your Name" required
+                                style="padding:12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.1);color:inherit;">
+                            <input name="email" type="email" placeholder="Your Email" required
+                                style="padding:12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.1);color:inherit;">
+                            <textarea name="message" placeholder="Your Message" rows="4" required
+                                style="padding:12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.1);color:inherit;"></textarea>
+                            <button class="btn primary" type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <footer>
+                © <span id="year"></span> Rogel Juliuz A. Llagas · <a href="#"
+                    style="color:var(--muted);text-decoration:underline;">GitHub</a>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Shared modal for project and thank-you -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDesc" style="color:var(--muted)"></p>
+            <button class="close-btn" id="closeModal">Close</button>
+        </div>
+    </div>
+</body>
+
+</html>
